@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "burtgel.steam.mn",
-  description: "burtgel.mn",
+  description: "burtgel.steam.mn",
 };
 
 export default function RootLayout({
