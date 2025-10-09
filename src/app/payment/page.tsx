@@ -197,12 +197,12 @@ const Students = () => {
               <TableHeader>
                 <TableRow>
                   <TableHead>№</TableHead>
-                  <TableHead>Овог</TableHead>
                   <TableHead>Нэр</TableHead>
                   <TableHead>Сургууль</TableHead>
                   <TableHead>Багшийн нэр</TableHead>
-                  <TableHead>Баг</TableHead>
-                  {/* <TableHead>Утас</TableHead> */}
+                  <TableHead>Баг нэр</TableHead>
+                  <TableHead>Тэмцээн төрөл</TableHead>
+                  <TableHead>Утас</TableHead>
                   <TableHead>Байршил</TableHead>
                   <TableHead>Төлбөр</TableHead>
                   <TableHead>Дүн</TableHead>
@@ -231,8 +231,13 @@ const Students = () => {
                       {i === 0 && (
                         <TableCell rowSpan={numChildren}>{index + 1}</TableCell>
                       )}
-                      <TableCell>{student.lastNames[i] || ""}</TableCell>
-                      <TableCell>{student.firstNames[i] || ""}</TableCell>
+                      <TableCell>
+                        {student.lastNames[i]
+                          ? `${student.lastNames[i][0]}. ${
+                              student.firstNames[i] || ""
+                            }`
+                          : student.firstNames[i] || ""}
+                      </TableCell>
                       {i === 0 && (
                         <TableCell rowSpan={numChildren}>
                           {student.schoolName}
@@ -248,11 +253,16 @@ const Students = () => {
                           {student.teamName}
                         </TableCell>
                       )}
-                      {/* {i === 0 && (
+                      {i === 0 && (
+                        <TableCell rowSpan={numChildren}>
+                          {student.trainingType.name}
+                        </TableCell>
+                      )}
+                      {i === 0 && (
                         <TableCell rowSpan={numChildren}>
                           {student.contactPhone}
                         </TableCell>
-                      )} */}
+                      )}
                       {i === 0 && (
                         <TableCell rowSpan={numChildren}>
                           {student.location?.name}
