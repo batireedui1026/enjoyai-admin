@@ -132,9 +132,12 @@ const Students = () => {
             Овог: student.lastNames[i] || "",
             Нэр: student.firstNames[i] || "",
             Сургууль: i === 0 ? student.schoolName : "",
+            "Багшийн нэр": i === 0 ? student.teacherName : "",
             Баг: i === 0 ? student.teamName : "",
+            "Тэмцээн төрөл": i === 0 ? student.trainingType?.name : "",
+            Нас: i === 0 ? student.ages : "",
             Утас: i === 0 ? student.contactPhone : "",
-            Аймаг: i === 0 ? student.location?.name : "",
+            Байршил: i === 0 ? student.location?.name : "",
             Төлбөр: i === 0 ? student.paymentStatus : "",
             Дүн: paymentPerChild,
             Огноо:
@@ -202,6 +205,7 @@ const Students = () => {
                   <TableHead>Багшийн нэр</TableHead>
                   <TableHead>Баг нэр</TableHead>
                   <TableHead>Тэмцээн төрөл</TableHead>
+                  <TableHead>Нас</TableHead>
                   <TableHead>Утас</TableHead>
                   <TableHead>Байршил</TableHead>
                   <TableHead>Төлбөр</TableHead>
@@ -256,6 +260,11 @@ const Students = () => {
                       {i === 0 && (
                         <TableCell rowSpan={numChildren}>
                           {student.trainingType.name}
+                        </TableCell>
+                      )}
+                      {i === 0 && (
+                        <TableCell rowSpan={numChildren}>
+                          {student.ages}
                         </TableCell>
                       )}
                       {i === 0 && (
